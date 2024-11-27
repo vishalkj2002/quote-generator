@@ -2,10 +2,10 @@ const quoteText = document.getElementsByClassName("quote")[0];
 const authorName = document.getElementsByClassName("name")[0];
 
 async function randomQuote() {
-  const API_KEY = window.API_KEY;
+  const apiKey = "vP+wvIBT0T5ujNMw18zDFA==IMb1klh30vZFKilQ";
   const response = await fetch("https://api.api-ninjas.com/v1/quotes", {
     headers: {
-      "X-Api-Key": API_KEY,
+      "X-Api-Key": apiKey,
     },
   });
 
