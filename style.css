@@ -8,30 +8,28 @@
 }
 
 body {
-    min-width: 100vw;
     min-height: 100vh;
     background-color: cornflowerblue;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
 }
 
 .main-container {
-  width: 50vw;
+  width: 100%;
+  max-width: 600px;
   background-color: white;
   border-radius: 25px;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  -ms-border-radius: 25px;
-  -o-border-radius: 25px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   padding: 30px;
 }
 
 .main-container header {
-    font-size: 35px;
+    font-size: 2rem;
     font-weight: 600;
     text-align: center;
+    margin-bottom: 1rem;
 }
 
 .main-container .content {
@@ -41,30 +39,24 @@ body {
 .content .quote-area {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .quote-area i {
-    font-size: 15px;
-}
-
-.quote-area i:first-child {
-    margin: 3px 10px 0 0;
-}
-
-.quote-area i:last-child {
-    display: flex;
-    align-items: flex-end;
-    margin: 0 0 3px 10px;
+    color: cornflowerblue;
+    font-size: 1.5rem;
+    margin: 0 0.75rem;
 }
 
 .quote-area .quote {
-    font-size: 22px;
+    font-size: 1.25rem;
     text-align: center;
+    line-height: 1.6;
 }
 
 .content .author {
     display: flex;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-style: italic;
     margin-top: 20px;
     justify-content: flex-end;
@@ -77,6 +69,7 @@ body {
 
 .main-container .buttons {
     border-top: 1px solid #ccc;
+    padding-top: 1rem;
 }
 
 .buttons .features {
@@ -84,28 +77,27 @@ body {
     align-items: center;
     margin-top: 20px;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .features ul {
     display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
 .features ul li {
     list-style-type: none;
-    margin: 0 5px;
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
     border: 2px solid cornflowerblue;
     display: flex;
     justify-content: center;
     align-items: center;
     color: cornflowerblue;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .features ul li:hover {
@@ -113,17 +105,66 @@ body {
     background-color: cornflowerblue;
 }
 
-.features button {
+.features .new-quote {
     border: none;
     outline: none;
     padding: 15px 25px;
     font-size: 15px;
     border-radius: 25px;
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    -ms-border-radius: 25px;
-    -o-border-radius: 25px;
     background-color: cornflowerblue;
     color: white;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.new-quote.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 600px) {
+    .main-container {
+        margin: 1rem;
+        padding: 20px;
+        width: calc(100% - 2rem);
+    }
+
+    .main-container header {
+        font-size: 1.75rem;
+    }
+
+    .quote-area .quote {
+        font-size: 1.1rem;
+    }
+
+    .content .author {
+        font-size: 1rem;
+    }
+
+    .buttons .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .features ul {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .features .new-quote {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .quote-area i {
+        font-size: 1.2rem;
+        margin: 0 0.5rem;
+    }
+
+    .quote-area .quote {
+        font-size: 1rem;
+    }
 }
